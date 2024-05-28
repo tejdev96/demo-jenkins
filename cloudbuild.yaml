@@ -2,3 +2,7 @@ steps:
   # Step to copy the entire repository to the GCS bucket
   - name: 'gcr.io/cloud-builders/gsutil'
     args: ['cp', '-r', '.', 'gs://test-jenkins-cicd']
+
+# Specify Cloud Logging for build logs
+options:
+  logging: CLOUD_LOGGING_ONLY
