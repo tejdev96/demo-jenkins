@@ -1,7 +1,4 @@
 steps:
-- name: 'gcr.io/cloud-builders/git'
-  entrypoint: 'bash'
-  args: ['-c', 'git clone https://github.com/tejdev96/demo-jenkins.git && cd demo-jenkins']
-
-- name: 'gcr.io/cloud-builders/gsutil'
-  args: ['cp', '-r', '.', 'gs://test-jenkins-cicd/']
+  # Step to copy the entire repository to the GCS bucket
+  - name: 'gcr.io/cloud-builders/gsutil'
+    args: ['cp', '-r', '.', 'gs://test-jenkins-cicd']
